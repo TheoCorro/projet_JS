@@ -1,2 +1,5 @@
 # projet_JS
-APIs Publiques : https://github.com/public-apis/public-apis
+APIs Publiques : https://github.com/public-apis/public-apis 
+
+API wkipedia https://fr.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=?? 
+[remplacer ?? par l'élement à chercher )
