@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Projet JS</title>
+        <script src="js.js"></script>
+        <script src="C:/wamp64/www/FrameWorks/jquery/jquery-3.4.1.min.js"></script>
+        <script>
+            var result;
+            function read_url(){
+                var url=$('#url').val();
+                fetch(url).then(
+                    function(response){
+                        response.json().then(
+                            function(data){
+                                result=JSON.stringify(data);
+                                $("#response").html(result);
+
+                            }
+                        )
+                    }
+                );
+            }
+            function read_url_title(){
+                console.log($('#title').val());
+                var url="https://www.omdbapi.com/?i=tt3896198&apikey=7692e830&t="+$('#title').val();
+                fetch(url).then(
+                    function(response){
+                        response.json().then(
+                            function(data){
+                                result=JSON.stringify(data);
+                                $("#response").html(result);
+
+                            }
+                        )
+                    }
+                );
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <p>Url :</p>
+            <input type="text" id="url">
+            <input type="button" id="go" value="go" onclick="read_url()">
+            <p>
+            Titre :
+            </p>
+            <input type="text" id="title">
+            <input type="button" id="go" value="go" onclick="read_url_title()">
+        </div>
+        <div>
+            <p id="response"></p>
+        </div>
+    </body>
+</html>
