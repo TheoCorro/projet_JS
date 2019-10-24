@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Projet JS</title>
+        <script src="C:/wamp64/www/FrameWorks/jquery/jquery-3.4.1.min.js"></script>
+        <style src="C:/wamp64/www/FrameWorks/jquery.ui/jquery-ui-1.12.1.custom/jquery-ui.css"></style>
+        <script src="C:/wamp64/www/FrameWorks/jquery.ui/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+        <script>
+        var results=[];
+        function go(){
+            var url="https://api.punkapi.com/v2/beers?food="+$('#research').val();
+            console.log(url);   
+            fetch(url).then(
+                function(response){
+                    response.json().then(
+                        function(data){
+                            results=data;
+                        }
+                    )
+                }
+            );        
+        }
+
+        function check(){
+            console.log(results[0]['name']);
+        }
+        </script>
+    </head>
+    <body>
+        <div><input type="text" name="search" id="research">
+            <input type="button" value="go" onClick="go()">
+            <input type="button" value="check" id="check" onClick="check()">
+        </div>
+    </body>
+</html>
