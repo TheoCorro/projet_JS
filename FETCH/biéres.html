@@ -9,6 +9,8 @@
         <script>
         var results=[];
         function go(){
+            var results=[];
+        function beer(){
             var url="https://api.punkapi.com/v2/beers?food="+$('#research').val();
             console.log(url);   
             fetch(url).then(
@@ -21,16 +23,26 @@
                 }
             );        
         }
-
-        function check(){
-            console.log(results[0]['name']);
-        }
+            
+            
+            
+        function create(){
+            var malt ="";
+            for (i in results) {
+                    malt += '<li style="font-size:30px" >' +results[i].name+ '</li><img src='+results[i].image_url+'><li>' +results[i].description + '</li>'
+};
+document.getElementById('brew').innerHTML = malt
+        };
         </script>
     </head>
     <body>
         <div><input type="text" name="search" id="research">
             <input type="button" value="go" onClick="go()">
-            <input type="button" value="check" id="check" onClick="check()">
+            <input type="button" value="check" id="check" onClick="check()"> 
+        </div> 
+        <div id="brewery"> 
+            <ul id="brew">
+            </ul>
         </div>
     </body>
 </html>
