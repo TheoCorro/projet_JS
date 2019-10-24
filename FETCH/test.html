@@ -38,7 +38,29 @@
                         )
                     }
                 );
-                                           
+            
+                
+                var results=[];
+        function beer(){
+            var url="https://api.punkapi.com/v2/beers?food="+$('#research').val();
+            console.log(url);   
+            fetch(url).then(
+                function(response){
+                    response.json().then(
+                        function(data){
+                            results=data;
+                        }
+                    )
+                }
+            );        
+        }
+        function create(){
+            var malt ="";
+for (i in results) {
+malt += '<li style="font-size:30px" >' +results[i].name+ '</li><img src='+results[i].image_url+'><li>' +results[i].description + '</li>'
+};
+document.getElementById('brew').innerHTML = malt
+        };
                                                  
                                            
         </script>
@@ -53,6 +75,19 @@
             </p>
             <input type="text" id="title">
             <input type="button" id="go" value="go" onclick="read_url_title()">
+        </div>
+         <div><input type="text" name="search" id="research">
+            <input type="button" value="go" onClick="beer()">
+            <input type="button" value="check" id="check" onClick="create()"> 
+  
+        </div> 
+
+        <div id='brewery'>  
+            <ul id='brew'> 
+
+            </ul>
+
+
         </div>
         <div>
             <p id="response"></p>
