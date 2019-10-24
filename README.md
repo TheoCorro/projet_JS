@@ -5,3 +5,6 @@ API wkipedia https://fr.wikipedia.org/w/api.php?action=query&format=json&list=se
 [remplacer ?? par l'élement à chercher )
  
 api list :  https://github.com/public-apis/public-apis/blob/master/README.md
+
+
+https://theocorro.github.io/projet_JS/
