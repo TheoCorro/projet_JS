@@ -1,6 +1,7 @@
 var sportElt = document.getElementById("sport");
 
 fetch('https://sports.api.decathlon.com/sports/recommendations/geolocation?coordinates=-73.582,45.511')
+// Modif Thierry
 .then(response => response.json())
 .then(data => {
   console.log(data) // Prints result from `response.json()` in getRequest
