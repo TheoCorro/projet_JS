@@ -9,6 +9,7 @@ API wkipedia https://fr.wikipedia.org/w/api.php?action=query&format=json&list=se
 api list :  https://github.com/public-apis/public-apis/blob/master/README.md
 
 Food : - https://world.openfoodfacts.org/category/fruits.json
+
        - https://us.openfoodfacts.org/categories.json    #liste catégories
 
 BEER : url="https://api.punkapi.com/v2/beers?food="+name;
