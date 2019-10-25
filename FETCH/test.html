@@ -40,7 +40,8 @@
                 );
             
                 
-                var results=[];
+    
+        var results=[];
         function beer(){
             var url="https://api.punkapi.com/v2/beers?food="+$('#research').val();
             console.log(url);   
@@ -61,7 +62,51 @@ malt += '<li style="font-size:30px" >' +results[i].name+ '</li><img src='+result
 };
 document.getElementById('brew').innerHTML = malt
         };
-                                                 
+
+
+        var liste_cat = [];
+        var category // JSON contenant toute les catégories 
+        function fetching_all(choice_cat) {
+        var url_cat =" https://us.openfoodfacts.org/category/"+choice_cat +"/";
+        var flag =true
+       while (flag){     
+                i=1
+           fetch(url_cat + i+".json").then(
+                function(response){
+                    response.json().then(
+                        function(data){  
+                            if (data.count < data.skip){ 
+                                flag=false ;} ;
+                            for(var el in data.products){
+                                if(liste_cat.indexOf(data.products[el].products_name)==-1){
+                                    liste_cat.push(data.products[el]);
+                                }
+                            }
+                       
+                          
+                            }
+                        )
+                    }
+                );        
+           i+= 1 ;  }
+        }
+     
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                                            
         </script>
     </head>
