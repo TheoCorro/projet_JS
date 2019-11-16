@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,9 +8,10 @@
         <style src="https://code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css"></style>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
+
+
+            
         var results=[];
-        function go(){
-            var results=[];
         function beer(){
             var url="https://api.punkapi.com/v2/beers?food="+$('#research').val();
             console.log(url);   
@@ -23,26 +25,34 @@
                 }
             );        
         }
-            
-            
-            
         function create(){
             var malt ="";
-            for (i in results) {
-                    malt += '<li style="font-size:30px" >' +results[i].name+ '</li><img src='+results[i].image_url+'><li>' +results[i].description + '</li>'
+for (i in results) {
+malt += '<li style="font-size:30px" >' +results[i].name+ '</li><img src='+results[i].image_url+'><li>' +results[i].description + '</li>'
 };
 document.getElementById('brew').innerHTML = malt
         };
+
+
+
+
+
+
         </script>
     </head>
     <body>
         <div><input type="text" name="search" id="research">
-            <input type="button" value="go" onClick="go()">
-            <input type="button" value="check" id="check" onClick="check()"> 
+            <input type="button" value="go" onClick="beer()">
+            <input type="button" value="check" id="check" onClick="create()"> 
+  
         </div> 
-        <div id="brewery"> 
-            <ul id="brew">
+
+        <div id='brewery'>  
+            <ul id='brew'> 
+
             </ul>
+
+
         </div>
     </body>
 </html>
