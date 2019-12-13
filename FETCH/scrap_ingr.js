@@ -64,31 +64,32 @@ function checkCat(){
         if(value['nutriments']['calcium_100g']){nutriments[3].push(Number(value['nutriments']['calcium_100g']))};// calcium
         if(value['nutriments']['satured_fat']){nutriments[4].push(Number(value['nutriments']['satured_fat']))};// fat
         if(value['nutriments']['iron_100g']){nutriments[5].push(Number(value['nutriments']['iron_100g']))};// iron
-        console.log(nutriments);
+        
     });
+    console.log(nutriments);
     if(isEmpty(nutriments[0])){
         console.log('Energy '+nutriments[0]);
-        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Energy : "+nutriments[0].reduce(reducer)/nutriments[0].length+"</p>");
+        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Energy : "+nutriments[0].reduce(reducer)/nutriments[0].length+" kcal pour 100g</p>");
     }
     if(isEmpty(nutriments[1])){
         console.log('Salt ' +nutriments[1]);
-        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Salt : "+nutriments[1].reduce(reducer)/nutriments[1].length+"</p>");
+        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Salt : "+nutriments[1].reduce(reducer)/nutriments[1].length+" g pour 100g</p>");
     }
     if(isEmpty(nutriments[4])){
         console.log(' Fat '+nutriments[4]);
-        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Fat : "+nutriments[4].reduce(reducer)/nutriments[4].length+"</p>");
+        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Fat : "+nutriments[4].reduce(reducer)/nutriments[4].length+" g pour 100g</p>");
     }
     if(isEmpty(nutriments[2])){
         console.log('Protein '+nutriments[2]);
-        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Protein : "+nutriments[2].reduce(reducer)/nutriments[2].length+"</p>");
+        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Proteins : "+nutriments[2].reduce(reducer)/nutriments[2].length+" g pour 100g</p>");
     }
     if(isEmpty(nutriments[3])){
         console.log('Calcium '+nutriments[3]);
-        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Calcium : "+nutriments[3].reduce(reducer)/nutriments[3].length+"</p>");
+        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Calcium : "+nutriments[3].reduce(reducer)/nutriments[3].length+" mg pour 100g</p>");
     }
     if(isEmpty(nutriments[5])){
         console.log('Iron '+nutriments[5]);
-        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Iron : "+nutriments[5].reduce(reducer)/nutriments[5].length+"</p>");
+        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Iron : "+nutriments[5].reduce(reducer)/nutriments[5].length+" mg pour 100g</p>");
     }
     get_beers();
 }
