@@ -3,6 +3,10 @@ var src=[];
 var cat={};
 var count=[];
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
+function isEmpty(ar){
+    if (Array.isArray(ar) && ar.length) { return true;}
+    else{    return false;}
+}
 // fetch pour l'autocomplete
 fetch(url).then(
     function(response){
@@ -50,25 +54,43 @@ function onlyUnique(value, index, self) {
 // sélectionne les aliments à fouiller dans la catégorie sélectionner
 function checkCat(){
     $('#my_liste').html(`<OPTION> --- Select an ingredient ---</OPTION>`);
+    $('#alim_caracs').html('');
     console.log(cat);
     var nutriments = [[],[],[],[],[],[],[]];
     $.each(cat,function(index,value){
-        nutriments[0]+=int(value['nutriments']['energy_100g']);// energy kcal
-        nutriments[1]+=int(value['nutriments']['salt_100g']);// salt
-        nutriments[2]+=int(value['nutriments']['protein_100g']);// protein
-        nutriments[3]+=int(value['nutriments']['calcium_100g']);// calcium
-        nutriments[4]+=int(value['nutriments']['satured_fat']);// fat
-        nutriments[5]+=int(value['nutriments']['iron_100g']);// iron
+        if(value['nutriments']['energy_100g']){nutriments[0].push(Number(value['nutriments']['energy_100g']))};// energy kcal
+        if(value['nutriments']['salt_100g']){nutriments[1].push(Number(value['nutriments']['salt_100g']))};// salt
+        if(value['nutriments']['protein_100g']){nutriments[2].push(Number(value['nutriments']['protein_100g']))};// protein
+        if(value['nutriments']['calcium_100g']){nutriments[3].push(Number(value['nutriments']['calcium_100g']))};// calcium
+        if(value['nutriments']['satured_fat']){nutriments[4].push(Number(value['nutriments']['satured_fat']))};// fat
+        if(value['nutriments']['iron_100g']){nutriments[5].push(Number(value['nutriments']['iron_100g']))};// iron
         console.log(nutriments);
     });
-    //$.each(nutriments,function(index,value){ nutriments[index]=value / nutriments[index].length; });
-        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Energy : "+nutriments[0].reduce(reducer)+"</p>");
-        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Salt : "+nutriments[1].reduce(reducer)+"</p>");
-        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Fat : "+nutriments[4].reduce(reducer)+"</p>");
-        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Protein : "+nutriments[2].reduce(reducer)+"</p>");
-        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Calcium : "+nutriments[3].reduce(reducer)+"</p>");
-        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Iron : "+nutriments[5].reduce(reducer)+"</p>");
-    //get_beers();
+    if(isEmpty(nutriments[0])){
+        console.log('Energy '+nutriments[0]);
+        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Energy : "+nutriments[0].reduce(reducer)/nutriments[0].length+"</p>");
+    }
+    if(isEmpty(nutriments[1])){
+        console.log('Salt ' +nutriments[1]);
+        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Salt : "+nutriments[1].reduce(reducer)/nutriments[1].length+"</p>");
+    }
+    if(isEmpty(nutriments[4])){
+        console.log(' Fat '+nutriments[4]);
+        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Fat : "+nutriments[4].reduce(reducer)/nutriments[4].length+"</p>");
+    }
+    if(isEmpty(nutriments[2])){
+        console.log('Protein '+nutriments[2]);
+        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Protein : "+nutriments[2].reduce(reducer)/nutriments[2].length+"</p>");
+    }
+    if(isEmpty(nutriments[3])){
+        console.log('Calcium '+nutriments[3]);
+        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Calcium : "+nutriments[3].reduce(reducer)/nutriments[3].length+"</p>");
+    }
+    if(isEmpty(nutriments[5])){
+        console.log('Iron '+nutriments[5]);
+        $('#alim_caracs').html($('#alim_caracs').html()+"<p> Iron : "+nutriments[5].reduce(reducer)/nutriments[5].length+"</p>");
+    }
+    get_beers();
 }
 
 
@@ -77,16 +99,23 @@ function checkCat(){
 function get_beers(){
     alim=$('#research').val();
     var url="https://api.punkapi.com/v2/beers?food=".concat(alim.replace(/ /g,'%20'));
+    console.log('Beers :');
+    console.log(url);
     fetch(url).then(
         function(response){
             response.json().then(
                 function(data){
                     var malt ="";
-                    for (i in data) {
+                    i=0;
+                    j=0;
+                    while (j<3 && data[i]) {
                             if(data[i].name != null && data[i].image_url != null &&  data[i].description != null ){
                                 malt += '<li style="font-size:30px" >' +data[i].name+ '</li><img width="30px" height="60px" src='+data[i].image_url+'><li>' +data[i].description + '</li>';
+                                j++;
                             } 
+                            i++;
                     }
+                    console.log(malt);
                     $('#brew').html(malt);
                 }
             );
