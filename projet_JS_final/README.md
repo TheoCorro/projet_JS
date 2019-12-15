@@ -20,8 +20,8 @@ API REST : https://openclassrooms.com/fr/courses/3449001-utilisez-des-api-rest-d
 
 
 Participant : 
-Florian BOBO 
-Alex-Bryan CANETTI 
-Théophile CORROENNE  
-Thierry PAILHAS 
-RANDRIANJANAHARY SARIAKA
+Florian BOBO  // 
+Alex-Bryan CANETTI //
+Théophile CORROENNE  //
+Thierry PAILHAS //
+RANDRIANJANAHARY SARIAKA // 
