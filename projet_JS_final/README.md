@@ -1,5 +1,5 @@
 # projet_JS
-GitHubPages : https://theocorro.github.io/projet_JS/FETCH/scrap_ingreds.html
+GitHubPages : : https://theocorro.github.io/projet_JS/projet_JS_final/fetch/index.html
 
 APIs Publiques : https://github.com/public-apis/public-apis 
 
