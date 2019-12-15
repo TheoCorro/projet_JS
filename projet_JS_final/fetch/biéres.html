@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Projet JS</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <style src="https://code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css"></style>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+
+
+            
+        var results=[];
+        function beer(){
+            var url="https://api.punkapi.com/v2/beers?food="+$('#research').val();
+            console.log(url);   
+            fetch(url).then(
+                function(response){
+                    response.json().then(
+                        function(data){
+                            results=data;
+                        }
+                    )
+                }
+            );        
+        }
+        function create(){
+            var malt ="";
+for (i in results) {
+malt += '<li style="font-size:30px" >' +results[i].name+ '</li><img src='+results[i].image_url+'><li>' +results[i].description + '</li>'
+};
+document.getElementById('brew').innerHTML = malt
+        };
+
+
+
+
+
+
+        </script>
+    </head>
+    <body>
+        <div><input type="text" name="search" id="research">
+            <input type="button" value="go" onClick="beer()">
+            <input type="button" value="check" id="check" onClick="create()"> 
+  
+        </div> 
+
+        <div id='brewery'>  
+            <ul id='brew'> 
+
+            </ul>
+
+
+        </div>
+    </body>
+</html>

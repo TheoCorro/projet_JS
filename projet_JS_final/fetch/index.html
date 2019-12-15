@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8">
+	
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Match Beer</title>
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="assets/css/main.css">
+	
+	<!-- JQuery -->
+	<script
+          src="https://code.jquery.com/jquery-3.4.1.js"
+          integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+          crossorigin="anonymous">
+         </script> 
+
+                 <script src="../FrameWorks/jquery/jquery-3.4.1.min.js"></script>
+        <style src="../FrameWorks/jquery.ui/jquery-ui-1.12.1.custom/jquery-ui.css"></style>
+        <script src="../FrameWorks/jquery.ui/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+        <script src="scrap_ingr.js"></script>
+        <style>
+        .ui-helper-hidden-accessible,.cont_my_liste{
+            display:none;
+        }
+        </style>
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body class="home">
+			<div class="navbar-header">
+				<!--Image Logo en haut a gauche-->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
+				<a class="navbar-brand" href="index.html"><img src="assets/images/beer.png" alt="Progressus HTML5 template"></a>
+			</div>
+	<!-- /.navbar -->
+
+	<!-- Top de l'écran -->
+	<header id="head">
+		<div class="container">
+			<div class="row">
+				<h1 class="lead">MATCH BEER</h1>
+				<p class="tagline">--Commencez par sélectionner une catégorie-- <br> 
+(British Only) <br> 
+<i> Si votre plat ne correspond à aucune bière...considérez un autre plat </i>   
+ <br> 
+ Bonne dégustation ! 
+
+
+
+				</p>
+				<div id="food" class="selectcategorie"> </div> 
+				    <div class="response">
+            <input type="text" name="search" id="research">
+            <input type="button" value="search for a category" onClick="checkCat()">
+
+        </div>
+        <div id="alim_caracs">
+            
+        </div>
+        <div id="brewery"> 
+                <div id="brew">
+                </div>
+        </div>
+				
+			</div>
+		</div>
+	</header>
+	
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Phrase d'accroche -->
+	<div class="container text-center">
+		<br> <br>
+		<h2 class="thin">Le meilleur endroit pour trouver la bière adaptée à son Plat</h2>
+
+	</div>
+	<!-- /Intro-->
+		
+	<!-- Suggestions/PetitsAtoutsDuSite -->
+	<div class="jumbotron top-space">
+		<div class="container">
+			
+			<h3 class="text-center thin">Pourquoi utiliser MatchBeer ?</h3>
+			
+			<div class="row">
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>Facile à utiliser</h4></div>
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="fa fa-flash fa-5"></i>Rapide</h4></div>
+
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="fa fa-heart fa-5"></i>Captivant</h4></div>
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="fa fa-smile-o fa-5"></i>Plaisir & Santé</h4></div>
+				</div>
+			</div> <!-- /row  -->
+		
+		</div>
+	</div>
+	<!-- /Highlights -->
+
+
+	
+
+	<!-- nos adresses et nos liens -->
+
+
+	<footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contact</h3>
+						<div class="widget-body">
+							<p>B 309 Bat B<br>
+								<a href="mailto:#">axelbryan.canetti@gmail.com</a><br>
+								<a href="mailto:#">thierry.pailhas@gmail.com</a><br>
+								<a href="mailto:#">florian.bobo34@gmail.com</a><br>
+								<a href="mailto:#">saricka6@gmail.com</a><br>
+								<a href="mailto:#">theocorro@gmail.com</a><br>
+								Université Paul Valery
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Follow us</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons">
+								<a href=""><i class="fa fa-twitter fa-2"></i></a>
+								<a href=""><i class="fa fa-dribbble fa-2"></i></a>
+								<a href=""><i class="fa fa-github fa-2"></i></a>
+								<a href=""><i class="fa fa-facebook fa-2"></i></a>
+							</p>	
+						</div>
+					</div>
+
+	
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+	<!-- phrase bas de page -->
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Copyright &copy; 2014, Théophile, Sariaka, Axel-Bryan, Thierry, Florian Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a> 
+								<a href="https://www.gettemplate.com/demo/progressus/" rel="designer">Original</a>
+							</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+	</footer>	
+		
+
+
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/headroom.min.js"></script>
+	<script src="assets/js/jQuery.headroom.min.js"></script>
+	<script src="assets/js/template.js"></script>
+</body>
+</html>
