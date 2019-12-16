@@ -1,1 +1,142 @@
 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Projet JS</title>
+        <script src="js.js"></script>
+        <script
+          src="https://code.jquery.com/jquery-3.4.1.js"
+          integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+          crossorigin="anonymous"></script>
+        <script>
+            var result;
+            function read_url(){
+                var url=$('#url').val();
+                fetch(url).then(
+                    function(response){
+                        response.json().then(
+                            function(data){
+                                result=JSON.stringify(data);
+                                $("#response").html(result);
+
+                            }
+                        )
+                    }
+                );
+            }
+            function read_url_title(){
+                console.log($('#title').val());
+                var url="https://www.omdbapi.com/?i=tt3896198&apikey=7692e830&t="+$('#title').val();
+                fetch(url).then(
+                    function(response){
+                        response.json().then(
+                            function(data){
+                                result=JSON.stringify(data);
+                                $("#response").html(result);
+
+                            }
+                        )
+                    }
+                );
+            
+                
+    
+        var results=[];
+        function beer(){
+            var url="https://api.punkapi.com/v2/beers?food="+$('#research').val();
+            console.log(url);   
+            fetch(url).then(
+                function(response){
+                    response.json().then(
+                        function(data){
+                            results=data;
+                        }
+                    )
+                }
+            );        
+        }
+        function create(){
+            var malt ="";
+for (i in results) {
+malt += '<li style="font-size:30px" >' +results[i].name+ '</li><img src='+results[i].image_url+'><li>' +results[i].description + '</li>'
+};
+document.getElementById('brew').innerHTML = malt
+        };
+
+
+        var liste_cat = [];
+        var category // JSON contenant toute les catégories 
+        function fetching_all(choice_cat) {
+        var url_cat =" https://us.openfoodfacts.org/category/"+choice_cat +"/";
+        var flag =true
+       while (flag){     
+                i=1
+           fetch(url_cat + i+".json").then(
+                function(response){
+                    response.json().then(
+                        function(data){  
+                            if (data.count < data.skip){ 
+                                flag=false ;} ;
+                            for(var el in data.products){
+                                if(liste_cat.indexOf(data.products[el].products_name)==-1){
+                                    liste_cat.push(data.products[el]);
+                                }
+                            }
+                       
+                          
+                            }
+                        )
+                    }
+                );        
+           i+= 1 ;  }
+        }
+     
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                                           
+        </script>
+    </head>
+    <body>
+        <div>
+            <p>Url :</p>
+            <input type="text" id="url">
+            <input type="button" id="go" value="go" onclick="read_url()">
+            <p>
+            Titre :
+            </p>
+            <input type="text" id="title">
+            <input type="button" id="go" value="go" onclick="read_url_title()">
+        </div>
+         <div><input type="text" name="search" id="research">
+            <input type="button" value="go" onClick="beer()">
+            <input type="button" value="check" id="check" onClick="create()"> 
+  
+        </div> 
+
+        <div id='brewery'>  
+            <ul id='brew'> 
+
+            </ul>
+
+
+        </div>
+        <div>
+            <p id="response"></p>
+        </div>
+    </body>
+</html>
