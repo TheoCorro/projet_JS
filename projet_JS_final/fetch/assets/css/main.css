@@ -26,7 +26,9 @@
 ul {
   counter-reset: index;  
   padding: 0;
-  max-width: 300px;
+  max-width: 300px; 
+ background-image:url(https://media.giphy.com/media/n3csev73k7KdW/giphy.gif); 
+  list-style-image: url(https://www.iconsdb.com/icons/preview/white/beer-xxl.png);
 }
 
 /* List element */
@@ -35,25 +37,13 @@ li {
   display: flex;
   align-items: center;
   padding: 12px 0;
-  box-sizing: border-box;
+  box-sizing: border-box; 
+ font-size: 12px ;  
+ color : white ; 
+ text-shadow: 1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, -1px 0 0 black, 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black; 
+
 }
 
-
-/* Element counter */
-li::before {
-  content: counters(index, ".", decimal-leading-zero);
-  font-size: 1.5rem;
-  text-align: right;
-  font-weight: bold;
-  min-width: 50px;
-  padding-right: 12px;
-  font-variant-numeric: tabular-nums;
-  align-self: flex-start;
-  background-image: linear-gradient(to bottom, aquamarine, orangered);
-  background-attachment: fixed;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 
 /* Element separation */
