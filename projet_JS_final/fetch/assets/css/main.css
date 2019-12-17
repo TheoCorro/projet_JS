@@ -4,12 +4,11 @@
 	#head .lead { font-family:"Open sans", Helvetica, Arial;  
 		line-height:1.15em;   
 		color: transparent;
- 	background:url(https://www.hopsteiner.com/wp-content/uploads/2017/05/Hopsteiner_Blog_Beer_Foam_5_17.jpg) repeat;
+ 	background:url(beerfoam.jpg) repeat;
   background-position:10px;
  	-webkit-background-clip: text;
   
 	font-size:65px;
-    font-family:Helvetica;
 	font-weight:bold;
   margin:0 auto;
   background-position-x: 50%;
