@@ -1,7 +1,7 @@
 /* Header */
 #head { background:#181015 url( ../images/bg_header.jpg) no-repeat; background-size: cover; min-height:520px; text-align: center; padding-top:240px; color:white; font-family:"Open sans", Helvetica, Arial; font-weight:300; }
 #head.secondary { height:100px; min-height: 100px; padding-top:0px; }
-#head.lead { font-family:"Open sans", Helvetica, Arial; margin-bottom:6px; line-height:1.15em;   color: transparent;
+	#head .lead { font-family:"Open sans", Helvetica, Arial; margin-bottom:6px; line-height:1.15em;   color: transparent;
  	background:url("beerfoam.jpg") repeat;
   background-position:10px;
  	-webkit-background-clip: text;
@@ -12,7 +12,7 @@
   margin:0 auto;
   background-position-x: 50%;
   background-position-y: 45px;
- }  
+ } 
 	#head .tagline { color:rgba(255,255,255,0.75); margin-bottom:25px; }
 		#head .tagline a { color:#fff; } 
 	#head .btn { margin-bottom:10px;}
@@ -37,9 +37,8 @@
 ul {
   counter-reset: index;  
   padding: 0;
-  max-width: 300px; 
- background-image:url(https://media.giphy.com/media/n3csev73k7KdW/giphy.gif); 
-  list-style-image: url(https://www.iconsdb.com/icons/preview/white/beer-xxl.png);
+  max-width: 300px;
+   background-image:url(https://media.giphy.com/media/n3csev73k7KdW/giphy.gif)
 }
 
 /* List element */
@@ -52,9 +51,11 @@ li {
  font-size: 12px ;  
  color : white ; 
  text-shadow: 1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, -1px 0 0 black, 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black; 
-
+ list-style-image: url(https://www.iconsdb.com/icons/preview/white/beer-xxl.png)
 }
 
+
+/* Element counter */
 
 
 /* Element separation */
